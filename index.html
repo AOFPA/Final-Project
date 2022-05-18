@@ -1,0 +1,485 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="blockleft.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- font	 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital@1&display=swap" rel="stylesheet">
+    <!-- end font -->
+
+    <link rel="icon" type="image/png" href="favicon.bmp" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Blockly@rduino</title>
+    <!-- <script type="text/javascript" src="blocks/blockly_uncompressed.js"></script> -->
+    <script type="text/javascript" src="blocks/blockly_compressed.js"></script>
+
+    <script type="text/javascript" src="utils/boards.js"></script>
+    <!-- needed for type of variable--->
+    <script type="text/javascript" src="utils/type.js"></script>
+    <script type="text/javascript" src="utils/types.js"></script>
+    <script type="text/javascript" src="utils/static_typing.js"></script>
+
+    <script type="text/javascript" src="utils/blocklyDuino.js"></script>
+    <script type="text/javascript" src="utils/blockly@rduino.js"></script>
+    <script type="text/javascript" src="utils/spin.js"></script>
+    <script type="text/javascript" src="utils/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="utils/bootstrap.min.3.3.6.js"></script>
+    <script type="text/javascript" src="utils/prettify.js"></script>
+
+    <!--script type="text/javascript" src="blocks/blocklyarduino/colour.js"></script>
+<script type="text/javascript" src="blocks/blocklyarduino/lists.js"></script-->
+    <script type="text/javascript" src="blocks/blocklyarduino/logic.js"></script>
+    <script type="text/javascript" src="blocks/blocklyarduino/loops.js"></script>
+    <script type="text/javascript" src="blocks/blocklyarduino/math.js"></script>
+    <script type="text/javascript" src="blocks/blocklyarduino/text.js"></script>
+    <script type="text/javascript" src="blocks/blocklyarduino/variables.js"></script>
+    <!--script type="text/javascript" src="blocks/blocklyarduino/variables_type.js"></script-->
+    <script type="text/javascript" src="blocks/blocklyarduino/array.js"></script>
+    <script type="text/javascript" src="blocks/blocklyarduino/procedures.js"></script>
+
+    <script type="text/javascript" src="blocks/arduino_base/arduino_base.js"></script>
+    <script type="text/javascript" src="blocks/arduino_base/arduino_io.js"></script>
+    <script type="text/javascript" src="blocks/arduino_base/arduino_conversion.js"></script>
+    <script type="text/javascript" src="blocks/arduino_base/variables_type.js"></script>
+    <script type="text/javascript" src="blocks/adafruit_motorshield/adafruit_motorshield.js"></script>
+    <script type="text/javascript" src="blocks/bitbloq/bitbloq.js"></script>
+    <script type="text/javascript" src="blocks/dfplayer-mini-mp3-dfrobot/dfplayer-mini-mp3-dfrobot.js"></script>
+    <script type="text/javascript" src="blocks/display-oled-128x64-i2c/display-oled-128x64-i2c.js"></script>
+    <script type="text/javascript" src="blocks/fischertechnik/fischertechnik.js"></script>
+    <script type="text/javascript" src="blocks/grove/grove.js"></script>
+    <script type="text/javascript" src="blocks/jeulin_maquette_feux/jeulin_maquette_feux.js"></script>
+    <script type="text/javascript" src="blocks/kit_velo/kit_velo_niv1.js"></script>
+    <script type="text/javascript" src="blocks/kit_velo/kit_velo_niv2.js"></script>
+    <script type="text/javascript" src="blocks/led-rgb-ws2812b/led-rgb-ws2812b.js"></script>
+    <script type="text/javascript" src="blocks/multi-function/multi-function.js"></script>
+    <script type="text/javascript" src="blocks/robuno/robuno.js"></script>
+    <script type="text/javascript" src="blocks/serial/serial.js"></script>
+    <script type="text/javascript" src="blocks/serial/softserial.js"></script>
+    <script type="text/javascript" src="blocks/servo/servo.js"></script>
+    <script type="text/javascript" src="blocks/technozone51/technozone51.js"></script>
+    <!--script type="text/javascript" src="blocks/technozone51/technozone51_barbot.js"></script-->
+    <script type="text/javascript" src="blocks/zumobot/zumo_motors.js"></script>
+    <script type="text/javascript" src="blocks/zumobot/zumo_sensors.js"></script>
+    <script type="text/javascript" src="blocks/robots/robot_motors.js"></script>
+    <script type="text/javascript" src="blocks/robots/robot_misc.js"></script>
+    <script type="text/javascript" src="blocks/arduino_shield/arduino_shield.js"></script>
+
+
+    <!-- เพิ่ม -->
+    <script type="text/javascript" src="blocks/ntc-sensor/ntc.js"></script>
+    <script type="text/javascript" src="blocks/led/led.js"></script>
+    <script type="text/javascript" src="blocks/led_rgb/led_rgb.js"></script>
+    <script type="text/javascript" src="blocks/dht22/dht22.js"></script>
+    <script type="text/javascript" src="blocks/LCD_I2C/LCD_i2C.js"></script>
+    <script type="text/javascript" src="blocks/tact_switch/tactSwitch.js"></script>
+    <!-- สิ้นสุดการเพิ่ม -->
+
+
+    <script type="text/javascript" src="generators/blocklyarduino/control.js"></script>
+    <script type="text/javascript" src="generators/blocklyarduino/logic.js"></script>
+    <script type="text/javascript" src="generators/blocklyarduino/math.js"></script>
+    <script type="text/javascript" src="generators/blocklyarduino/text.js"></script>
+    <script type="text/javascript" src="generators/blocklyarduino/variables.js"></script>
+    <script type="text/javascript" src="generators/blocklyarduino/array.js"></script>
+    <script type="text/javascript" src="generators/blocklyarduino/procedures.js"></script>
+
+    <script type="text/javascript" src="generators/arduino/arduino_base.js"></script>
+    <script type="text/javascript" src="generators/arduino/arduino_io.js"></script>
+    <script type="text/javascript" src="generators/arduino/arduino_conversion.js"></script>
+    <script type="text/javascript" src="generators/arduino/variables_type.js"></script>
+    <script type="text/javascript" src="generators/arduino/adafruit_motorshield.js"></script>
+    <script type="text/javascript" src="generators/arduino/bitbloq.js"></script>
+    <script type="text/javascript" src="generators/arduino/dfplayer-mini-mp3-dfrobot.js"></script>
+    <script type="text/javascript" src="generators/arduino/display-oled-128x64-i2c.js"></script>
+    <script type="text/javascript" src="generators/arduino/fischertechnik.js"></script>
+    <script type="text/javascript" src="generators/arduino/grove.js"></script>
+    <script type="text/javascript" src="generators/arduino/jeulin_maquette_feux.js"></script>
+    <script type="text/javascript" src="generators/arduino/led-rgb-ws2812b.js"></script>
+    <script type="text/javascript" src="generators/arduino/multi-function.js"></script>
+    <script type="text/javascript" src="generators/arduino/robuno.js"></script>
+    <script type="text/javascript" src="generators/arduino/serial.js"></script>
+    <script type="text/javascript" src="generators/arduino/servo.js"></script>
+    <script type="text/javascript" src="generators/arduino/softserial.js"></script>
+    <script type="text/javascript" src="generators/arduino/technozone51.js"></script>
+    <!--script type="text/javascript" src="generators/arduino/technozone51_barbot.js"></script-->
+    <script type="text/javascript" src="generators/arduino/zumo_motors.js"></script>
+    <script type="text/javascript" src="generators/arduino/zumo_sensors.js"></script>
+    <script type="text/javascript" src="generators/arduino/robot_motors.js"></script>
+    <script type="text/javascript" src="generators/arduino/robot_misc.js"></script>
+    <script type="text/javascript" src="generators/arduino/arduino_shield.js"></script>
+    <script type="text/javascript" src="generators/arduino/kit_velo_niv1.js"></script>
+
+
+    <!-- เพิ่ม -->
+    <script type="text/javascript" src="generators/arduino/ntc.js"></script>
+    <script type="text/javascript" src="generators/arduino/led.js"></script>
+    <script type="text/javascript" src="generators/arduino/led_rgb.js"></script>
+    <script type="text/javascript" src="generators/arduino/dht22.js"></script>
+    <script type="text/javascript" src="generators/arduino/LCD_I2C.js"></script>
+    <script type="text/javascript" src="generators/arduino/tact_switch.js"></script>
+
+    <!-- สิ้นสุดการเพิ่ม -->
+
+    <!--TechnoZone51-->
+    <script type="text/javascript" src="utils/html2canvas.js"></script>
+    <script type="text/javascript" src="utils/canvas2image.js"></script>
+    <!--Fin TZ51-->
+    <script type="text/javascript" src="lang/code.js"></script>
+
+    <script type="text/javascript" src="http://codebender.cc/embed/compilerflasher.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/blockly@rduino.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/prettify.css">
+    <!-- <link rel="stylesheet" type="text/css" href="nav.css"> -->
+
+    <script type="text/javascript">
+        $(window).load(function() {
+            $(".loading").fadeOut("slow");
+        });
+    </script>
+    <!-- สีข้างบนสุด -->
+    <!-- style="background-color: #191C24 " -->
+
+    <body onload="BlocklyDuino.init()">
+
+        <div id="divTitre" style="padding-bottom: 70px; background-color: #191C24;  ">
+            <div style="background-color: #036DB1;">
+                <p style=" text-align: center; font-size: 30px; padding-top:10px; text-align: center; font-family: 'Kanit', sans-serif; color:white">
+                    <a href="">
+                    </a>
+                    การพัฒนาสิ่งแวดล้อมการเขียนโปรแกรมเชิงทัศน์สำหรับระบบฝังตัว
+                </p>
+                <div id="menuPanelFiles" style="text-align: right;" style="background-color: #191C24;">
+                    <a id="btn_saveXML" class='text-left' href="#" role='button'>
+                        <!-- <span class="glyphicon glyphicon-cloud-download"></span> -->
+                        <button class="image_magin"> 
+				  <img src="image/iconXml.png"  class="myDIV" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="Girl in a jacket" width="30" height="30"></button>
+
+                        <!-- <span id="span_saveXML"> </span> -->
+
+                    </a>
+                    <button id="btn_fakeload" class="image_magin text-center">
+				<img src="image/uploadIcon.png"  class="myDIV" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="Girl in a jacket" width="30" height="30"></button>
+                    </button>
+                    <input type="file" id="load" style="display: none;" />
+                    <button style="margin-left: 10px;" id="btn_example" class="image_magin text-center" data-toggle="modal" data-target="#exampleModal">
+				<img src="image/exampleIcon.png"  class="myDIV" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="Girl in a jacket" width="30" height="30"></button>
+                    </button>
+                    <a id="btn_create_example" class='text-left' href="#" role='button' style="margin-left: 10px;">
+                        <!-- <span class="glyphicon glyphicon-cloud-download"></span> -->
+                        <button class="image_magin"> 
+					<img src="image/editicon.png"  class="myDIV" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="Girl in a jacket" width="30" height="30"></button>
+
+                        <!-- <span id="span_saveXML"> </span> -->
+
+                    </a>
+                    <button id="btn_config" class="image_magin text-center" data-toggle="modal" data-target="#configModal" style="margin-right: 15px;">
+				<img src="image/settingIcon.png"  class="myDIV" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="Girl in a jacket" width="30" height="30"></button>
+                    </button>
+                </div>
+            </div>
+
+            <div style="background-color: #B983FF; ">
+            </div>
+
+            <!-- <select id="languageMenu"></select> -->
+        </div>
+        <div id="divBody" style="margin-top:55px" style="background-color: #B983FF">
+            <div id="menuPanel" style="background-color: #fcfcfd" style="margin-top:100px">
+                <!-- ------------- ส่วนที่เป็น option ของบอร์ด arduino UNO-------------------------------- -->
+                <div id="menuPanelConfig" style="margin-top:20px">
+                    <div id="divCard">
+                        <label id="labelArduinoCard"></label>
+                        <select id="pinout">
+						<option value="ESP32">ESP32</option>
+		            </select>
+                    </div>
+                </div>
+                <div id="menuPanelBlockly" class="margin-top-5">
+                    <ul id="ul_nav" role="tablist">
+                        <li role="presentation" id="tab_blocks" class="active" style="text-align: center;">
+                            <a href="#content_blocks" aria-controls="content_blocks" role="tab" data-toggle="tab">
+                                <!-- <span class="glyphicon glyphicon-home"></span> -->
+                                <img src="https://d29fhpw069ctt2.cloudfront.net/icon/image/47954/preview.svg" alt="Girl in a jacket" width="60" height="60">
+
+                            </a>
+                            <span id="a_blocks" class="block_left"></span>
+                        </li>
+                        <li role="presentation" id="tab_arduino" style="text-align: center;">
+                            <a href="#content_arduino" aria-controls="content_arduino" role="tab" data-toggle="tab">
+                                <!-- <span class="glyphicon glyphicon-check"></span> -->
+                                <img src="https://cdn4.iconfinder.com/data/icons/colorful-electronic-parts/108/circuitdiagram_full_of_color2-42-512.png" alt="Girl in a jacket" width="60" height="60">
+                            </a>
+                            <span id="a_arduino" class="block_left"></span>
+                        </li>
+                        <li role="presentation" id="tab_term" class="text-center">
+                            <a href="#content_term" aria-controls="content_term" role="tab" data-toggle="tab">
+                                <!-- <span  class="glyphicon glyphicon-log-out"></span> -->
+                                <img src="https://cdn0.iconfinder.com/data/icons/connector-types-6/64/DB9-cable-serial-rs232-adapter-512.png" alt="Girl in a jacket" width="60" height="60">
+
+                            </a>
+                            <span id="a_term" class="block_left"> </span>
+                        </li>
+                        <li role="presentation" id="tab_xml" class="text-center">
+                            <a href="#content_xml" aria-controls="content_xml" role="tab" data-toggle="tab">
+                                <!-- <span  class="glyphicon glyphicon-file"></span> -->
+
+                                <img src="https://cdn-icons-png.flaticon.com/512/1081/1081840.png" alt="Girl in a jacket" width="60" height="60">
+                            </a>
+                            <span id="a_xml" class="block_left"></span>
+                        </li>
+
+                    </ul>
+                </div>
+                <div id="div_help_button">
+                </div>
+            </div>
+
+            <!-- Nav tabs  ส่วนที่เป็น loop function แล้วมุมขวา-->
+            <div id="divTabpanel" role="tabpanel">
+                <!-- Tab panes -->
+                <div id="content_area" class="tab-content">
+
+                    <div id="content_blocks" class="tab-pane active" style="position: relative;">
+                        <button id="btn_delete" class="btn btn-danger">
+					<span class="glyphicon glyphicon-erase"> </span>
+					<span id="span_delete"> </span>
+				</button>
+                        <button id="btn_blocs_picture_mini" class="btn btn-default">
+					<span id="icon_btn_blocs_picture_mini" class="glyphicon glyphicon-minus"> </span>
+				</button>
+                        <button id="btn_blocs_picture_maxi" class="btn btn-default">
+					<span id="icon_btn_blocs_picture_maxi" class="glyphicon glyphicon-plus"> </span>
+				</button>
+                        <button id="btn_blocs_picture" class="btn btn-default">
+					<span id="icon_btn_blocs_picture" class="glyphicon glyphicon-eye-open"> </span>
+				</button>
+                        <button id="btn_size" class="btn btn-default">
+					<span id="icon_btn_size" class="glyphicon glyphicon-fullscreen"> </span>
+				</button>
+                        <button id="btn_preview" class="btn btn-default">
+					<span id="icon_btn_preview" class="glyphicon glyphicon-list-alt"> </span>
+				</button>
+                        <button id="btn_inline" class="btn btn-default">
+                    <span id="icon_btn_inline" class="glyphicon glyphicon-option-vertical"> </span>
+                </button>
+                        <div id="toggle" class="modal-content" style="display: none;">
+                            <pre id="pre_previewArduino"></pre>
+                        </div>
+                    </div>
+                    <div id="content_arduino" class="tab-pane">
+                        <select id="cb_cf_boards"></select>
+                        <select id="cb_cf_ports"></select>
+                        <a id="btn_plugin_codebender" class='btn btn-danger' href="https://codebender.cc/static/plugin" target=_blank role='button'>
+                            <span class="glyphicon glyphicon-new-window"></span>
+                            <span id="span_plugin_codebender"> </span>
+                        </a>
+                        <button id="cb_cf_verify_btn" class="btn btn-primary">
+					<span class="glyphicon glyphicon-ok"> </span>
+					<span id="span_verify_codebender"> </span>
+				</button>
+                        <button id="btn_edit_code" class="btn btn-primary" data-toggle="modal" data-target="#editModal">
+                    <span id="icon_edit_btn" class="glyphicon glyphicon-edit"> </span>
+                    <span id="span_edit_code"> </span>
+                </button>
+                        <button id="cb_cf_flash_btn" class="btn btn-primary">
+					<span class="glyphicon glyphicon-log-in"> </span>
+					<span id="span_flash_codebender"> </span>
+				</button>
+                        <a id="btn_saveArduino" class='btn btn-primary' href="#" role='button'>
+                            <span class="glyphicon glyphicon-save"> </span>
+                            <span id="span_saveIno"> </span>
+                        </a>
+                        <button id="btn_pasteIDEArduino" class="btn btn-primary">
+					<span class="glyphicon glyphicon-random"> </span>
+					<span id="span_pasteIDEArduino"> </span>
+				</button>
+                        <pre id="pre_arduino"></pre>
+                        <div id="debug_arduino"></div>
+                    </div>
+                    <div id="content_term" class="tab-pane">
+                        <select id="cb_cf_baud_rates"></select>
+                        <button id="cb_cf_serial_monitor_connect" class="btn btn-primary">
+					<span class="glyphicon glyphicon-transfer"> </span>
+					<span id="span_connect_serial"> </span>				
+				</button>
+                        <div id="cb_cf_serial_monitor"></div>
+                    </div>
+                    <div id="content_supervision" class="tab-pane">
+                    </div>
+                    <div id="content_xml" class="tab-pane">
+                        <pre id="pre_xml"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modals -->
+        <!-- about modal -->
+
+        <!-- ajax modal -->
+        <div class="modal fade" id="ajaxModal" tabindex="-1" role="dialog" aria-labelledby="ajaxModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="ajaxModalLabel"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <pre id="msg_ajax_ko"></pre>
+                        <input type="checkbox" name="ajax_msg" id="ajax_msg" /> <span id="span_ajax_msg"> </span>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button id="btn_close_msg" type="button" class="btn btn-default" data-dismiss="modal"></button>
+                        <button id="btn_valid_msg" type="button" class="btn btn-primary"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- picture "modal" -->
+        <div id="showcardModal" class="modal-dialog modal-sm" style="display:none">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button id="btn_card_picture_mini" class="btn btn-default">
+			<span id="icon_btn_blocs_picture_mini" class="glyphicon glyphicon-minus"> </span>
+		</button>
+                    <button id="btn_card_picture_maxi" class="btn btn-default">
+			<span id="icon_btn_blocs_picture_maxi" class="glyphicon glyphicon-plus"> </span>
+		</button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="arduino_card_picture" width="200">
+                </div>
+            </div>
+        </div>
+        <!-- example modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <tbody id="includedContent">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- convert bin <-> text "modal" -->
+        <div id="convertModal" class="modal-dialog" style="display:none">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="convertModalLabel"></h4>
+                </div>
+                <div class="modal-body text-center" id="convert_content">
+                    <input id="ti1" value="TEST" />
+                    <button onclick="BlocklyDuino.text2bin();">Texte -> binaire</button>
+                    <input id="ti2" />
+                    <br/>
+                    <input id="ti3" value="01010101" />
+                    <button onclick="BlocklyDuino.bin2text();">Binaire -> texte</button>
+                    <input id="ti4" />
+                </div>
+            </div>
+        </div>
+        <!-- convert RGB color code "modal" -->
+        <div id="RGB_modal" class="modal-dialog" style="display:none">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="RGBModalLabel"></h4>
+                </div>
+                <div class="modal-body text-center" id="frame_RGB">
+                    <iframe width="550" height="700" src="./utils/RGB/RGB.html" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- videos modal -->
+        <div id="videoModal" class="modal-dialog" style="display:none">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="videoModalLabel"></h4>
+                </div>
+                <div class="modal-body text-center">
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLwy0yw3Oq4-uFNmgedXx9_L_TJNORo-4N&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- toolbox config modal -->
+        <div class="modal fade" id="configModal" tabindex="-1" role="dialog" aria-labelledby="configModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="configModalLabel"></h4>
+                    </div>
+                    <div id="divToolbox">
+                        <label id="labelToolboxDefinition"></label>
+                        <select id="toolboxes">
+				<option value="toolbox_algo" selected="selected">Algo simple</option>
+				<option value="toolbox_1" selected="selected">Arduino pour débutants</option>
+				<option value="toolbox_2" selected="selected">Arduino pour habitués</option>
+				<option value="toolbox_arduino_all">Arduino pour experts</option>
+			</select>
+                    </div>
+                    <input type="checkbox" name="select_all" id="select_all" /> <span id="span_select_all"> </span>
+                    <div style="float : right; margin-right : 5px;">
+                        <input type="checkbox" name="put_in_url" id="put_in_url" /> <span id="span_put_in_url"> </span>
+                    </div>
+
+                    <div class="modal-body" id="modal-body-config"></div>
+                    <div class="modal-footer">
+                        <button id="btn_close_config" type="button" class="btn btn-default" data-dismiss="modal"></button>
+                        <button id="btn_valid_config" type="button" class="btn btn-primary"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- edit code modal -->
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="editModalLabel"></h4>
+                    </div>
+                    <div class="modal-body" id="modal-body-code">
+                        <textarea id="edit_code" rows="20" cols="100"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn_closeCode" type="button" class="btn btn-default" data-dismiss="modal"></button>
+                        <button id="btn_validCode" type="button" class="btn btn-primary" data-dismiss="modal"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function bigImg(x) {
+                x.style.height = "40px";
+                x.style.width = "40px";
+            }
+
+            function normalImg(x) {
+                x.style.height = "32px";
+                x.style.width = "32px";
+            }
+        </script>
+        <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page -->
+
+    </body>
+
+</html>

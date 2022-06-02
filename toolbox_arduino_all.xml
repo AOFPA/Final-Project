@@ -530,6 +530,20 @@
 	</category>
 	<!-- จบ tact switch -->
 
+	<!-- เพิ่ม servo motor -->
+	<category name="SERVO_MOTOR" colour="#036DB1">
+		<block type="servo_init"></block>
+		<block type="servo_value"></block>
+		<block type="servo_rotate_by_value">
+			 <value name="value">
+				<block type="variables_get">
+					<field name="VAR">item</field>
+				</block>
+   			 </value>
+		</block>
+	</category>
+	<!-- จบ sevo motor -->
+
 	<category name="CAT_LED_RGB_CHAIN" colour="#C9D7E2">
 		<block type="lp2i_ledRGB_WS2812B_init">
 			<value name="Pin_LedRGB">

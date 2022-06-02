@@ -463,6 +463,7 @@ Blockly.Msg.NTC = "NTC";
 Blockly.Msg.LED = "LED";
 Blockly.Msg.LED_RGB = "LED RGB";
 Blockly.Msg.DHT22 = "DHT22";
+Blockly.Msg.SERVO_MOTOR = "SERVO MOTOR";
 
 // เพิ่ม 5/5/2022
 Blockly.Msg.LCD_I2C = "LCD I2C";

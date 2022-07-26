@@ -1,6 +1,6 @@
 //code ref https://www.cybertice.com/article/447/สอนใช้งาน-arduino-analog-thermistor-temperature-sensor-waterproof-ntc-10k-เซ็นเซอร์วัดอุณหภูมิ
 
-//Block เอาไว้กำหนดขา แล้วค่าตัว R
+//* Block เอาไว้กำหนดขา แล้วค่าตัว R
 Blockly.Arduino.ntc_config = function (block) {
     const R_NTC = Blockly.Arduino.valueToCode(this, 'R_NTC', Blockly.Arduino.ORDER_ATOMIC) || '\'\'';
     const R = Blockly.Arduino.valueToCode(this, 'R', Blockly.Arduino.ORDER_ATOMIC);
@@ -69,8 +69,18 @@ Blockly.Arduino.ntc_config = function (block) {
     return code;
 };
 
+// * แสดงองศาผ่าน Serial Monitor
+Blockly.Arduino.ntc_showTemp = function (block) {
+    const unit = block.getFieldValue('unit');
+    const pin = block.getFieldValue('pin');
+    const text = Blockly.Arduino.valueToCode(block, 'text', Blockly.Arduino.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    let code = `Serial.print(${text} : );\n`;
+    code += `Serial.println(${unit}_${pin});`;
+    return code;
+};
 
-
+// * Bloce Value
 Blockly.Arduino.ntc_value = function (block) {
     const unit = block.getFieldValue('unit');
     const pin = block.getFieldValue('pin');

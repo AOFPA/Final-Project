@@ -1,4 +1,5 @@
-String.prototype.convertToRGB = function() {
+// * Function แปลง Hex to RGB Colour
+String.prototype.convertToRGB = function () {
     if (this.length != 6) {
         throw "Only six-digit hex colors are allowed.";
     }
@@ -13,11 +14,11 @@ String.prototype.convertToRGB = function() {
     return aRgb;
 }
 
-Blockly.Arduino.led_rgb_config = function(block) {
-    var r_pin = block.getFieldValue('R_PIN');
-    var g_pin = block.getFieldValue('G_PIN');
-    var b_pin = block.getFieldValue('B_PIN');
-    var colour = block.getFieldValue('colour');
+Blockly.Arduino.led_rgb_config = function (block) {
+    const r_pin = block.getFieldValue('R_PIN');
+    const g_pin = block.getFieldValue('G_PIN');
+    const b_pin = block.getFieldValue('B_PIN');
+    const colour = block.getFieldValue('colour');
     // TODO: Assemble JavaScript into code variable.
     // aRgb = colour.convertToRGB()
 
@@ -26,22 +27,21 @@ Blockly.Arduino.led_rgb_config = function(block) {
     aRgb = hex.convertToRGB();
     // define
     //#define R_PIN 0
-    Blockly.Arduino.definitions_['define_led_rgb'] =
-        '#define R_PIN ' + r_pin + '\n' +
-        '#define G_PIN ' + g_pin + '\n' +
-        '#define B_PIN ' + b_pin + '\n';
+    Blockly.Arduino.definitions_[`define_led_rgb_${r_pin}_${g_pin}_${b_pin}`] =
+        `#define R_PIN_${r_pin} ${r_pin}\n` +
+        `#define G_PIN_${g_pin} ${g_pin}\n` +
+        `#define B_PIN_${b_pin} ${b_pin}\n`;
 
     //void setup
-    Blockly.Arduino.setups_['setup_led_rgb'] =
-        '\n  pinMode(R_PIN,OUTPUT);\n' +
-        '  pinMode(G_PIN,OUTPUT);\n' +
-        '  pinMode(B_PIN,OUTPUT);\n';
+    Blockly.Arduino.setups_[`setup_led_rgb_${r_pin}_${g_pin}_${b_pin}`] =
+        `\n  pinMode(${r_pin},OUTPUT);\n` +
+        `  pinMode(${g_pin},OUTPUT);\n` +
+        `  pinMode(${b_pin},OUTPUT);\n`;
 
     // void loop()
-    var code = '//White LED \n';
-    code += 'analogWrite(R_PIN,' + aRgb[0] + ');\n';
-    code += 'analogWrite(G_PIN,' + aRgb[1] + ');\n';
-    code += 'analogWrite(B_PIN,' + aRgb[2] + ');\n';
+    let code = `analogWrite(${r_pin},${aRgb[0]});\n`;
+    code += `analogWrite(${g_pin},${aRgb[1]});\n`;
+    code += `analogWrite(${b_pin},${aRgb[2]});\n`;
 
 
 

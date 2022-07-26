@@ -464,7 +464,8 @@ Blockly.Msg.LED = "LED";
 Blockly.Msg.LED_RGB = "LED RGB";
 Blockly.Msg.DHT22 = "DHT22";
 Blockly.Msg.SERVO_MOTOR = "SERVO MOTOR";
-
+Blockly.Msg.TEMP_SENSOR = "18B20 (Temp Sensor)";
+Blockly.Msg.Relay = "Relay";
 // เพิ่ม 5/5/2022
 Blockly.Msg.LCD_I2C = "LCD I2C";
 

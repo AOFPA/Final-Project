@@ -19,15 +19,16 @@ goog.require('Blockly.Arduino');
 ------------------------------------------
 */
 
-Blockly.Arduino.servo_init = function(block) {
+Blockly.Arduino.servo_init = function (block) {
     //value
     var pin = block.getFieldValue('pin');
     var angle = block.getFieldValue('angle');
 
     //define
     Blockly.Arduino.definitions_['servo_motor'] = '#include <Servo.h>' + '\n';
-    Blockly.Arduino.definitions_['servo_servo_' + pin] = 'Servo myservo_' + pin + ';\n';
-    Blockly.Arduino.definitions_['servo_motor_define'] = '#define SERVO_PIN_' + pin + ' ' + pin + '\n';
+    Blockly.Arduino.definitions_['servo_motor_define' + pin] =
+        `Servo myservo_${pin};\n` +
+        `#define SERVO_PIN_${pin} ${pin}\n`;
 
 
     //setup
@@ -51,7 +52,7 @@ Blockly.Arduino.servo_init = function(block) {
 | 
 ------------------------------------------
 */
-Blockly.Arduino.servo_value = function(block) {
+Blockly.Arduino.servo_value = function (block) {
     var pin = block.getFieldValue('pin');
     // TODO: Assemble JavaScript into code variable.
     pin = 'myservo_' + pin;
@@ -69,7 +70,7 @@ Blockly.Arduino.servo_value = function(block) {
 | 
 ------------------------------------------
 */
-Blockly.Arduino.servo_rotate_by_value = function(block) {
+Blockly.Arduino.servo_rotate_by_value = function (block) {
     var pin = block.getFieldValue('pin');
     var value = Blockly.Arduino.valueToCode(block, 'value', Blockly.Arduino.ORDER_ATOMIC);
 
